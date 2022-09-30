@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * Combine Course
  *
@@ -13,16 +14,16 @@ const globby = require('globby');
 const fs = require('fs');
 const readingTime = require('reading-time');
 
-(async function main() {
-  const slug = verifyArgs();
-  const topics = await getCourseTopics(slug);
+// (async function main() {
+//   const slug = verifyArgs();
+//   const topics = await getCourseTopics(slug);
 
-  combineBlog(slug, topics);
-  combineGithub(slug, topics);
+//   combineBlog(slug, topics);
+//   combineGithub(slug, topics);
 
-  console.log(printTOC(slug, topics));
-  console.log(`\n[success]: combined ${topics.length} topics.`);
-})();
+//   console.log(printTOC(slug, topics));
+//   console.log(`\n[success]: combined ${topics.length} topics.`);
+// })();
 
 function verifyArgs() {
   const [slug] = process.argv.slice(2);
@@ -92,13 +93,13 @@ function printTOC(slug, topics) {
 function transformBody(course_slug, body) {
   body = body.replace(
     /\]\(\/static\/courses/g,
-    '](https://raw.githubusercontent.com/karanpratapsingh/portfolio/master/public/static/courses',
+    '](https://raw.githubusercontent.com/AlaDouagi/portfolio/master/public/static/courses',
   );
 
   // Replace static links
   body = body.replace(
     new RegExp(`]\\(/courses/${course_slug}`, 'g'),
-    `](https://karanpratapsingh.com/courses/${course_slug}`,
+    `](https://aladouagi.com/courses/${course_slug}`,
   );
 
   return body;

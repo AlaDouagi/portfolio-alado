@@ -30,7 +30,7 @@ function verifyArgs() {
 }
 
 function getBanner(section, course_slug, slug) {
-  return `https://raw.githubusercontent.com/karanpratapsingh/portfolio/master/public/static/courses/${course_slug}/${section}/${slug}/banner.png`;
+  return `https://raw.githubusercontent.com/AlaDouagi/portfolio-alado/alado/public/static/courses/${course_slug}/${section}/${slug}/banner.png`;
 }
 
 function getBody(course_slug, slug) {
@@ -43,13 +43,13 @@ function getBody(course_slug, slug) {
 
   body = body.replace(
     /\]\(\/static\/courses/g,
-    '](https://raw.githubusercontent.com/karanpratapsingh/portfolio/master/public/static/courses',
+    '](https://raw.githubusercontent.com/AlaDouagi/portfolio-alado/alado/public/static/courses',
   );
 
   // Replace static links
   body = body.replace(
     new RegExp(`]\\(/courses/${course_slug}`, 'g'),
-    `](https://karanpratapsingh.com/courses/${course_slug}`,
+    `](https://aladouagi.com/courses/${course_slug}`,
   );
 
   // Add footer
@@ -98,7 +98,7 @@ function createDraft(apiKey, body) {
     const title = `System Design: ${name}`;
     const main_image = getBanner(section, course_slug, slug);
     const tags = ['distributedsystems', 'architecture', 'tutorial'];
-    const canonical_url = `https://github.com/karanpratapsingh/${course_slug}#${slug}`;
+    const canonical_url = `https://github.com/AlaDouagi/${course_slug}#${slug}`;
     const series = 'System Design';
     const body_markdown = getBody(course_slug, slug);
 
