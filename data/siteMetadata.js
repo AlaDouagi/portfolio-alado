@@ -2,7 +2,8 @@ const siteMetadata = {
   title: 'Alaeddine Douagi',
   author: 'Alaeddine Douagi',
   headerTitle: 'Alaeddine Douagi',
-  description: 'A full-stack JavaScript developer that .',
+  description:
+    'A full-stack JavaScript developer, passionate about functional programming and Rust.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://www.aladouagi.com',
